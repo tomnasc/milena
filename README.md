@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing Page - Professora Milena Machado
 
-## Getting Started
+Landing page de alta conversão para a Professora Milena Machado, policial civil do Rio de Janeiro e mentora de concursos para forças policiais. O site serve para captar leads, vender produtos digitais, e construir autoridade da marca pessoal da professora.
 
-First, run the development server:
+## Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Frontend**: Next.js
+- **Hospedagem**: Vercel
+- **Banco de Dados**: Supabase
+- **Pagamentos**: Stripe
+
+## Funcionalidades
+
+- Layout responsivo (mobile-first)
+- Integração Stripe para venda digital
+- Captura de leads com Supabase
+- Sessão de depoimentos
+- Links para redes sociais
+- Material gratuito com captura de leads
+
+## Estrutura do Projeto
+
+```
+├── app/                  # Diretório principal da aplicação Next.js
+│   ├── api/              # API routes para backend
+│   │   ├── checkout/     # Integração Stripe
+│   │   ├── leads/        # Captura de leads
+│   │   └── newsletter/   # Inscrição newsletter
+│   ├── globals.css       # Estilos globais
+│   ├── layout.tsx        # Layout principal
+│   └── page.tsx          # Página inicial
+├── components/           # Componentes React reutilizáveis
+│   ├── Hero.tsx          # Seção de Hero
+│   ├── About.tsx         # Sobre a mentora
+│   ├── Products.tsx      # Produtos digitais
+│   └── ...               # Outros componentes
+├── lib/                  # Utilitários e configurações
+│   ├── supabase.ts       # Configuração Supabase
+│   └── stripe.ts         # Configuração Stripe
+├── public/               # Arquivos estáticos
+└── styles/               # Estilos adicionais
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuração do Ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pré-requisitos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18.x ou superior
+- Conta na Vercel (hospedagem)
+- Conta no Supabase (banco de dados)
+- Conta no Stripe (pagamentos)
 
-## Learn More
+### Variáveis de Ambiente
 
-To learn more about Next.js, take a look at the following resources:
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_SUPABASE_URL=sua_url_do_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=sua_chave_publica_do_stripe
+STRIPE_SECRET_KEY=sua_chave_secreta_do_stripe
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Instalação
 
-## Deploy on Vercel
+```bash
+# Instalar dependências
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Rodar em desenvolvimento
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Construir para produção
+npm run build
+
+# Iniciar em produção
+npm start
+```
+
+## Estrutura do Banco de Dados (Supabase)
+
+### Tabela: leads
+
+- `id`: uuid (primary key)
+- `nome`: text
+- `email`: text
+- `consentimento_marketing`: boolean
+- `created_at`: timestamp
+
+### Tabela: newsletter
+
+- `id`: uuid (primary key)
+- `email`: text
+- `created_at`: timestamp
+
+## Configuração do Stripe
+
+1. Crie produtos e preços no dashboard do Stripe
+2. Atualize os IDs dos preços no arquivo `components/Products.tsx`
+
+## Deploy
+
+O deploy pode ser feito diretamente na Vercel:
+
+```bash
+npm install -g vercel
+vercel
+```
+
+## Manutenção e SEO
+
+- Verifique o desempenho no Lighthouse regularmente
+- Atualize as meta tags em `app/layout.tsx` para otimização de SEO
+- Substitua os placeholders por imagens reais
+
+## Licença
+
+Todos os direitos reservados - Professora Milena Machado 

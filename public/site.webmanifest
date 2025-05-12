@@ -1,0 +1,14 @@
+{
+  "name": "Professora Milena Machado",
+  "short_name": "Milena Machado",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#121212",
+  "display": "standalone"
+} 
