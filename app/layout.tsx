@@ -11,15 +11,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-fixed bg-cover bg-center bg-no-repeat min-h-screen" 
+      <body 
         style={{ 
-          backgroundImage: "url('/mi1.png')", 
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-          WebkitBackgroundSize: "cover", /* Safari/iOS */
-          MozBackgroundSize: "cover"
-        }}>
-        <div className="min-h-screen relative backdrop-blur-[1px] bg-black/5">
+          backgroundImage: "url('/mi1.png')",
+          height: '100%',
+          width: '100%',
+          margin: 0,
+          padding: 0,
+          overflow: 'auto'
+        }}
+        className="min-h-screen"
+      >
+        {/* Div overlay que contém a imagem de fundo real */}
+        <div 
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundImage: "url('/mi1.png')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            WebkitBackgroundSize: 'cover',
+            MozBackgroundSize: 'cover',
+            WebkitTransform: 'translate3d(0,0,0)', /* Força o uso do hardware acceleration no iOS */
+            transform: 'translate3d(0,0,0)', /* Melhora a performance de renderização */
+          }}
+        />
+        <div className="min-h-screen relative backdrop-blur-[1px] bg-black/5 z-10">
           {children}
         </div>
         <Toaster position="bottom-center" />
