@@ -11,15 +11,15 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
-  // Animação para ser reproduzida ao entrar no campo de visão
+  // Animação suavizada para ser reproduzida ao entrar no campo de visão
   const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.8,
+        ease: "easeInOut"
       }
     }
   }
@@ -30,77 +30,77 @@ export default function Home() {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <Hero />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <About />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <Products />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <FreeContent />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <Testimonials />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <CallToAction />
         </motion.div>
         
         <motion.div 
-          className="block-container backdrop-blur-sm bg-black/40 my-10 p-6 rounded-lg"
+          className="block-container backdrop-blur-[0.5px] bg-black/30 my-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <Contact />
         </motion.div>
         
         <motion.div 
-          className="backdrop-blur-sm bg-black/60 mt-10 p-6 rounded-lg"
+          className="backdrop-blur-[0.5px] bg-black/40 mt-10 p-6 rounded-lg"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeInUp}
         >
           <Footer />

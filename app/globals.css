@@ -10,6 +10,8 @@
     @apply text-text;
     line-height: 1.6;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -23,7 +25,7 @@
   }
   
   .cta-button {
-    @apply inline-block py-3 px-6 text-lg font-bold no-underline rounded transition-colors duration-300;
+    @apply inline-block py-3 px-6 text-lg font-bold no-underline rounded transition-colors duration-500;
   }
   
   .primary-cta {
@@ -43,7 +45,7 @@
   }
   
   .block-container {
-    @apply transition-all duration-300 hover:bg-black/50;
+    @apply transition-all duration-500 hover:bg-black/40;
   }
 }
 
@@ -149,7 +151,7 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
   }
   100% {
     transform: translateY(0px);
@@ -157,10 +159,10 @@
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
 /* Transitions suaves para todos os elementos */
 * {
-  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transition: background-color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
 } 
